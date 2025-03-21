@@ -1,5 +1,3 @@
-rm -f ./a.out | clang++ -Wall -Werror -Wextra -std=c++98 Warlock.cpp main.cpp && ./a.out
-
 https://github.com/flavienfr/Exam/blob/42670f99d15e1c74f71932b259818eb4defd9614/Exam_Rank_05/cpp_module_02/Warlock.cpp
 
 https://github.com/artainmo/examrank05/blob/00656c5c651c0d66c561699496a248be0640d081/cpp_module_02/Warlock.cpp
