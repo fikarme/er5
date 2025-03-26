@@ -37,11 +37,10 @@ int t3() {
     std::cout << "t3: passed (assignment operator is private)" << std::endl;
     return 0;
 }
-
 int t4() {
     Warlock const richard("Richard", "Mistress of Magma");
     richard.introduce();
-    std::cout << richard.getName() << " - " << richard.getTitle() << std::endl;
+    cout << richard.getName() << " - " << richard.getTitle() << endl;
 
     Warlock* jack = new Warlock("Jack", "the Long");
     jack->introduce();
@@ -50,7 +49,7 @@ int t4() {
 
     delete jack;
 
-    std::cout << "t4: passed" << std::endl;
+    cout << "t4: passed" << endl;
     return 0;
 }
 
@@ -60,6 +59,6 @@ int main() {
     t2();
     t3();
     t4();
-    std::cout << "All tests passed!" << std::endl;
+    cout << "All tests passed!" << endl;
     return 0;
 }
