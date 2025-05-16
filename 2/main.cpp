@@ -6,7 +6,7 @@
 #include "TargetGenerator.hpp"
 #include "Fireball.hpp"
 
-int t1() {
+void t1() {
 	Warlock richard("Richard", "foo");
 	
 	Fireball *fire = new Fireball();
@@ -36,10 +36,9 @@ int t1() {
 	cout << endl;
 
     cout << "t1.1: passed" << endl;
-    return 0;
 }
 
-int t2() {
+void t2() {
 	Warlock richard("Richard", "foo");
 	richard.setTitle("Hello, I'm Richard the Warlock!");
 	BrickWall model1;
@@ -56,18 +55,16 @@ int t2() {
 
 	ATarget* wall = tarGen.createTarget("Inconspicuous Red-brick Wall");
 
-	richard.introduce();
+	richard.voidroduce();
 	richard.launchSpell("Polymorph", *wall);
 	richard.launchSpell("Fireball", *wall);
 
     cout << "t2: passed" << endl;
-    return 0;
 }
-
 
 int main() {
     t1();
     t2();
-    cout << "main: passed" << endl;
+    cout << "All tests passed!" << endl;
     return 0;
 }
