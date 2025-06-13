@@ -1,10 +1,13 @@
 #ifndef FIREBALL_HPP
 #define FIREBALL_HPP
 
-#include 
+#include "ASpell.hpp"
 
-class Fireball {
-
+class Fireball : public ASpell {
+public:
+    Fireball();
+    virtual ~Fireball();
+    virtual Fireball* clone() const;
 };
 
 #endif

@@ -15,20 +15,20 @@ void t0() {
     isConst(richard1.getType());
     Fwoosh richard2;
     isConst(richard2.getName());
-    
+
     Warlock richard("Richard", "the Titled");
 
     Dummy bob;
     Fwoosh* fwoosh = new Fwoosh();
-  
+
     richard.learnSpell(fwoosh);
-  
+
     richard.introduce();
     richard.launchSpell("Fwoosh", bob);
-  
+
     richard.forgetSpell("Fwoosh");
     richard.launchSpell("Fwoosh", bob);
-  
+
     delete fwoosh;
     cout << "t0: passed" << endl;
 }
@@ -82,7 +82,6 @@ void t6() {
   richard.launchSpell("Fwoosh", bob);
   cout << "t6: passed" << endl;
   delete fwoosh;
-  return 0;
 }
 
 int main() {

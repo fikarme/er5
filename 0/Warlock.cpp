@@ -16,7 +16,7 @@ const string &Warlock::getTitle() const {
     return title;
 }
 
-void Warlock::setTitle(const string & newTitle) {
+void Warlock::setTitle(const string &newTitle) {
     title = newTitle;
 }
 

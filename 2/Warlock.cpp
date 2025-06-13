@@ -1,4 +1,5 @@
 #include "Warlock.hpp"
+#include "SpellBook.hpp"
 
 Warlock::Warlock(const string &name, const string &title) : name(name), title(title) {
     cout << name << ": This looks like another boring day." << endl;
@@ -25,23 +26,18 @@ void Warlock::introduce() const {
 }
 
 void Warlock::learnSpell(ASpell *spell) {
-    for (size_t i = 0; i < spells.size(); i++)
-        if (spells[i]->getName() == spell->getName())
-            return;
-    spells.push_back(spell->clone());
+    if (spell)
+        book.learnSpell(spell);
 }
 
 void Warlock::forgetSpell(const string &name) {
-    for (vector<ASpell *>::iterator it = spells.begin(); it != spells.end(); it++)
-        if ((*it)->getName() == name) {
-            delete *it;
-            spells.erase(it);
-            return;
-        }
+    book.forgetSpell(name);
 }
 
 void Warlock::launchSpell(const string &name, const ATarget &target) {
-    for (size_t i = 0; i < spells.size(); i++)
-        if (spells[i]->getName() == name)
-            return spells[i]->launch(target);
+    ASpell* spell = book.createSpell(name);
+    if (spell) {
+        spell->launch(target);
+        delete spell;
+    }
 }

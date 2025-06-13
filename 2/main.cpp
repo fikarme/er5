@@ -8,7 +8,7 @@
 
 void t1() {
 	Warlock richard("Richard", "foo");
-	
+
 	Fireball *fire = new Fireball();
 	BrickWall* wall = new BrickWall();
 	TargetGenerator tarGen;
@@ -23,7 +23,7 @@ void t1() {
 	richard.launchSpell(name, *target);
 
     cout << "t1: passed" << endl;
-	
+
 	fire = new Fireball();
 	richard.learnSpell(fire);
 	tarGen.learnTargetType(target);
@@ -55,7 +55,7 @@ void t2() {
 
 	ATarget* wall = tarGen.createTarget("Inconspicuous Red-brick Wall");
 
-	richard.voidroduce();
+	richard.introduce();
 	richard.launchSpell("Polymorph", *wall);
 	richard.launchSpell("Fireball", *wall);
 

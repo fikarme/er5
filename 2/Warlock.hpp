@@ -5,6 +5,7 @@
 #include <iostream>
 #include <vector>
 #include "ASpell.hpp"
+#include "SpellBook.hpp"
 
 using std::string;
 using std::cout;
@@ -15,7 +16,7 @@ class Warlock {
 private:
     string name;
     string title;
-    vector<ASpell *> spells;
+    SpellBook book;
 
     Warlock();
     Warlock(const Warlock&);
