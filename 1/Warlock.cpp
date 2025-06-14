@@ -1,4 +1,7 @@
 #include "Warlock.hpp"
+#include "ASpell.hpp"
+#include "ATarget.hpp"
+#include <iostream>
 
 Warlock::Warlock(const string &name, const string &title) : name(name), title(title) {
     cout << name << ": This looks like another boring day." << endl;
@@ -24,24 +27,23 @@ void Warlock::introduce() const {
     cout << name << ": I am " << name << ", " << title << "!" << endl;
 }
 
-void Warlock::learnSpell(ASpell *spell) {
-    for (size_t i = 0; i < spells.size(); i++)
-        if (spells[i]->getName() == spell->getName())
-            return;
-    spells.push_back(spell->clone());
+void Warlock::learnSpell(ASpell *sname) {
+    if (!sname)
+        return;
+    if (spells.count(sname->getName()) == 0)
+        spells[sname->getName()] = sname->clone();
 }
 
-void Warlock::forgetSpell(const string &name) {
-    for (vector<ASpell *>::iterator it = spells.begin(); it != spells.end(); it++)
-        if ((*it)->getName() == name) {
-            delete *it;
-            spells.erase(it);
-            return;
-        }
+void Warlock::forgetSpell(const string &sname) {
+    map<string, ASpell *>::iterator it = spells.find(sname);
+    if (it != spells.end()) {
+        delete it->second;
+        spells.erase(it);
+    }
 }
 
-void Warlock::launchSpell(const string &name, const ATarget &target) {
-    for (size_t i = 0; i < spells.size(); i++)
-        if (spells[i]->getName() == name)
-            return spells[i]->launch(target);
+void Warlock::launchSpell(const string &sname, const ATarget &target) {
+    map<string, ASpell *>::iterator it = spells.find(sname);
+    if (it != spells.end())
+        it->second->launch(target);
 }
