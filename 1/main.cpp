@@ -93,5 +93,4 @@ int main() {
     t5();
     t6();
     cout << "All tests passed!" << endl;
-    return 0;
 }

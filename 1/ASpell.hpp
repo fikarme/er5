@@ -1,7 +1,6 @@
 #ifndef ASPELL_HPP
 #define ASPELL_HPP
 
-#include <string>
 #include <iostream>
 #include "ATarget.hpp"
 
@@ -18,9 +17,9 @@ protected:
 public:
     ASpell();
     ASpell(const string &name, const string &effects);
-    ASpell(const ASpell &other);
+    ASpell(const ASpell &cpy);
+    ASpell &operator=(const ASpell &rhs);
     virtual ~ASpell();
-    ASpell &operator=(const ASpell &other);
 
     const string &getName() const;
     const string &getEffects() const;

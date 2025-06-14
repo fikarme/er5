@@ -4,12 +4,12 @@ ATarget::ATarget() {}
 
 ATarget::ATarget(const string &type) : type(type) {}
 
-ATarget::ATarget(const ATarget &other) : type(other.type) {}
+ATarget::ATarget(const ATarget &cpy) : type(cpy.type) {}
 
 ATarget::~ATarget() {}
 
-ATarget &ATarget::operator=(const ATarget &other) {
-    type = other.type;
+ATarget &ATarget::operator=(const ATarget &rhs) {
+    type = rhs.type;
     return *this;
 }
 

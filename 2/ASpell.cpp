@@ -4,13 +4,13 @@ ASpell::ASpell() {}
 
 ASpell::ASpell(const string &name, const string &effects) : name(name), effects(effects) {}
 
-ASpell::ASpell(const ASpell &other) : name(other.name), effects(other.effects) {}
+ASpell::ASpell(const ASpell &cpy) : name(cpy.name), effects(cpy.effects) {}
 
 ASpell::~ASpell() {}
 
-ASpell &ASpell::operator=(const ASpell &other) {
-    name = other.name;
-    effects = other.effects;
+ASpell &ASpell::operator=(const ASpell &rhs) {
+    name = rhs.name;
+    effects = rhs.effects;
     return *this;
 }
 
@@ -25,4 +25,3 @@ const string &ASpell::getEffects() const {
 void ASpell::launch(const ATarget &target) const {
     target.getHitBySpell(*this);
 }
-

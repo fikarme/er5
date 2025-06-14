@@ -1,29 +1,25 @@
-#ifndef WARLOCK_HPP
-#define WARLOCK_HPP
-
-#include <string>
 #include <iostream>
-
 using std::string;
 using std::cout;
 using std::endl;
 
 class Warlock {
-    private:
-        string name;
-        string title;
-        Warlock();
-        Warlock(const Warlock& rhs);
-        Warlock &operator=(const Warlock& rhs);
-    public:
-        const string &getName();
-        const string &getTitle();
-        void setTitle(const string &newTitle)
-}
+private:
+    string name;
+    string title;
+    Warlock();
+    Warlock(const Warlock &cpy);
+    Warlock &operator=(const Warlock &rhs);
+public:
+    ~Warlock();
+    Warlock(const string &name, const string &title);
+    const string &getName() const;
+    const string &getTitle() const;
+    void setTitle(const string &newTitle);
+    void introduce() const;
+};
 
-#endif
-
-Warlock::Warlock(const string &name, const string &title) : name(name), title(title) {
+Warlock::Warlock(const string & name, const string & title) : name(name), title(title) {
     cout << name << ": This looks like another boring day." << endl;
 }
 
@@ -47,11 +43,10 @@ void Warlock::introduce() const {
     cout << name << ": I am " << name << ", " << title << "!" << endl;
 }
 
-int main()
-{
+int main() {
   Warlock const richard("Richard", "Mistress of Magma");
   richard.introduce();
-  std::cout << richard.getName() << " - " << richard.getTitle() << std::endl;
+  cout << richard.getName() << " - " << richard.getTitle() << endl;
 
   Warlock* jack = new Warlock("Jack", "the Long");
   jack->introduce();
@@ -59,17 +54,4 @@ int main()
   jack->introduce();
 
   delete jack;
-
-  return (0);
 }
-
-// ~$ ./a.out | cat -e
-// Richard: This looks like another boring day.$
-// Richard: I am Richard, Mistress of Magma!$
-// Richard - Mistress of Magma$
-// Jack: This looks like another boring day.$
-// Jack: I am Jack, the Long!$
-// Jack: I am Jack, the Mighty!$
-// Jack: My job here is done!$
-// Richard: My job here is done!$
-// ~$

@@ -1,10 +1,8 @@
 #ifndef WARLOCK_HPP
 #define WARLOCK_HPP
 
-#include <string>
 #include <iostream>
 #include <vector>
-#include "ASpell.hpp"
 
 using std::string;
 using std::cout;
@@ -18,14 +16,14 @@ private:
     vector<ASpell *> spells;
 
     Warlock();
-    Warlock(const Warlock&);
-    Warlock &operator=(const Warlock&);
+    Warlock(const Warlock &cpy);
+    Warlock &operator=(const Warlock &);
 public:
     ~Warlock();
-    Warlock(const string& name, const string& title);
+    Warlock(const string &name, const string &title);
     const string &getName() const;
     const string &getTitle() const;
-    void setTitle(const string& newTitle);
+    void setTitle(const string &newTitle);
     void introduce() const;
     void learnSpell(ASpell *spell);
     void forgetSpell(const string &name);

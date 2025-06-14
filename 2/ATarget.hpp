@@ -15,9 +15,9 @@ protected:
 public:
     ATarget();
     ATarget(const string &type);
-    ATarget(const ATarget &other);
+    ATarget(const ATarget &cpy);
     virtual ~ATarget();
-    ATarget &operator=(const ATarget &other);
+    ATarget &operator=(const ATarget &rhs);
 
     const string &getType() const;
     virtual ATarget *clone() const = 0;
