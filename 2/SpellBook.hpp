@@ -4,10 +4,12 @@
 #include <string>
 #include <map>
 #include "ASpell.hpp"
+using std::string;
+using std::map;
 
 class SpellBook {
 private:
-    std::map<std::string, ASpell*> spells;
+    map<string, ASpell*> spells;
 
     SpellBook(const SpellBook&);
     SpellBook &operator=(const SpellBook&);
@@ -17,8 +19,8 @@ public:
     ~SpellBook();
 
     void learnSpell(ASpell* spell);
-    void forgetSpell(const std::string& spellName);
-    ASpell* createSpell(const std::string& spellName);
+    void forgetSpell(const string& spellName);
+    ASpell* createSpell(const string& spellName);
 };
 
 #endif

@@ -4,10 +4,12 @@
 #include <string>
 #include <map>
 #include "ATarget.hpp"
+using std::string;
+using std::map;
 
 class TargetGenerator {
 private:
-    std::map<std::string, ATarget*> targets;
+    map<string, ATarget*> targets;
 
     TargetGenerator(const TargetGenerator&);
     TargetGenerator &operator=(const TargetGenerator&);
@@ -17,8 +19,8 @@ public:
     ~TargetGenerator();
 
     void learnTargetType(ATarget* target);
-    void forgetTargetType(const std::string& targetType);
-    ATarget* createTarget(const std::string& targetType);
+    void forgetTargetType(const string& targetType);
+    ATarget* createTarget(const string& targetType);
 };
 
 #endif
