@@ -22,7 +22,7 @@ void t1() {
 	ATarget* target = tarGen.createTarget(type);
 	richard.launchSpell(name, *target);
 
-    cout << "t1: passed" << endl;
+	cout << "t1: passed" << endl;
 
 	fire = new Fireball();
 	richard.learnSpell(fire);
@@ -35,7 +35,7 @@ void t1() {
 		cout << "is not...";
 	cout << endl;
 
-    cout << "t1.1: passed" << endl;
+	cout << "t1.1: passed" << endl;
 }
 
 void t2() {
@@ -59,12 +59,12 @@ void t2() {
 	richard.launchSpell("Polymorph", *wall);
 	richard.launchSpell("Fireball", *wall);
 
-    cout << "t2: passed" << endl;
+	cout << "t2: passed" << endl;
 }
 
 int main() {
-    t1();
-    t2();
-    cout << "All tests passed!" << endl;
-    return 0;
+	t1();
+	t2();
+	cout << "All tests passed!" << endl;
+	return 0;
 }

@@ -9,18 +9,18 @@ using std::map;
 
 class SpellBook {
 private:
-    map<string, ASpell*> spells;
+	map<string, ASpell*> spells;
 
-    SpellBook(const SpellBook&);
-    SpellBook &operator=(const SpellBook&);
+	SpellBook(const SpellBook&);
+	SpellBook &operator=(const SpellBook&);
 
 public:
-    SpellBook();
-    ~SpellBook();
+	SpellBook();
+	~SpellBook();
 
-    void learnSpell(ASpell* spell);
-    void forgetSpell(const string& spellName);
-    ASpell* createSpell(const string& spellName);
+	void learnSpell(ASpell* spell);
+	void forgetSpell(const string& spellName);
+	ASpell* createSpell(const string& spellName);
 };
 
 #endif

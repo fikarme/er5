@@ -5,42 +5,42 @@ using std::endl;
 
 class Warlock {
 private:
-    string name;
-    string title;
-    Warlock();
-    Warlock(const Warlock &cpy);
-    Warlock &operator=(const Warlock &rhs);
+	string name;
+	string title;
+	Warlock();
+	Warlock(const Warlock &cpy);
+	Warlock &operator=(const Warlock &rhs);
 public:
-    ~Warlock();
-    Warlock(const string &name, const string &title);
-    const string &getName() const;
-    const string &getTitle() const;
-    void setTitle(const string &newTitle);
-    void introduce() const;
+	~Warlock();
+	Warlock(const string &name, const string &title);
+	const string &getName() const;
+	const string &getTitle() const;
+	void setTitle(const string &newTitle);
+	void introduce() const;
 };
 
 Warlock::Warlock(const string & name, const string & title) : name(name), title(title) {
-    cout << name << ": This looks like another boring day." << endl;
+	cout << name << ": This looks like another boring day." << endl;
 }
 
 Warlock::~Warlock() {
-    cout << name << ": My job here is done!" << endl;
+	cout << name << ": My job here is done!" << endl;
 }
 
 const string &Warlock::getName() const {
-    return name;
+	return name;
 }
 
 const string &Warlock::getTitle() const {
-    return title;
+	return title;
 }
 
 void Warlock::setTitle(const string &newTitle) {
-    title = newTitle;
+	title = newTitle;
 }
 
 void Warlock::introduce() const {
-    cout << name << ": I am " << name << ", " << title << "!" << endl;
+	cout << name << ": I am " << name << ", " << title << "!" << endl;
 }
 
 int main() {

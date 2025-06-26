@@ -9,19 +9,19 @@ ASpell::ASpell(const ASpell &cpy) : name(cpy.name), effects(cpy.effects) {}
 ASpell::~ASpell() {}
 
 ASpell &ASpell::operator=(const ASpell &rhs) {
-    name = rhs.name;
-    effects = rhs.effects;
-    return *this;
+	name = rhs.name;
+	effects = rhs.effects;
+	return *this;
 }
 
 const string &ASpell::getName() const {
-    return name;
+	return name;
 }
 
 const string &ASpell::getEffects() const {
-    return effects;
+	return effects;
 }
 
 void ASpell::launch(const ATarget &target) const {
-    target.getHitBySpell(*this);
+	target.getHitBySpell(*this);
 }

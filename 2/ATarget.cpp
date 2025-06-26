@@ -9,14 +9,14 @@ ATarget::ATarget(const ATarget &cpy) : type(cpy.type) {}
 ATarget::~ATarget() {}
 
 ATarget &ATarget::operator=(const ATarget &rhs) {
-    type = rhs.type;
-    return *this;
+	type = rhs.type;
+	return *this;
 }
 
 const string &ATarget::getType() const {
-    return type;
+	return type;
 }
 
 void ATarget::getHitBySpell(const ASpell &spell) const {
-    cout << type << " has been " << spell.getEffects() << "!" << endl;
+	cout << type << " has been " << spell.getEffects() << "!" << endl;
 }

@@ -12,19 +12,19 @@ class ATarget;
 
 class ASpell {
 protected:
-    string name;
-    string effects;
+	string name;
+	string effects;
 public:
-    ASpell();
-    ASpell(const string &name, const string &effects);
-    ASpell(const ASpell &cpy);
-    ASpell &operator=(const ASpell &rhs);
-    virtual ~ASpell();
+	ASpell();
+	ASpell(const string &name, const string &effects);
+	ASpell(const ASpell &cpy);
+	ASpell &operator=(const ASpell &rhs);
+	virtual ~ASpell();
 
-    const string &getName() const;
-    const string &getEffects() const;
-    virtual ASpell *clone() const = 0;
-    void launch(const ATarget &target) const;
+	const string &getName() const;
+	const string &getEffects() const;
+	virtual ASpell *clone() const = 0;
+	void launch(const ATarget &target) const;
 };
 
 #endif
